@@ -107,3 +107,58 @@ text-align: center;
     height: 58px;
     font-size: 22px;
 }
+
+.about-gravity-team{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 300px
+
+}
+
+.gravity-table{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1000px; ;
+}
+
+.about-gravity-team-header{
+    max-width: 410px;
+}
+
+.cell{
+
+}
+
+/* Для нижньої рамки */
+#cell_1, #cell_highlighted, #cell_3, #cell_4 {
+    position: relative; /* Потрібно для коректної роботи псевдоелемента */
+    padding-bottom: 10px; /* Простір для нижньої рамки */
+}
+
+#cell_1::after, #cell_highlighted::after, #cell_3::after, #cell_4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Товщина лінії */
+    background: linear-gradient(to right, #6ca5f5, #b0bbf8, #f1eed4); /* Градієнт для нижньої рамки */
+}
+
+/* Для правої рамки */
+#cell_1, #cell_highlighted, #cell_3, #cell_5, #cell_6, #cell_7 {
+    position: relative; /* Потрібно для коректної роботи псевдоелемента */
+    padding-right: 10px; /* Простір для правої рамки */
+}
+
+#cell_1::before, #cell_highlighted::before, #cell_3::before, #cell_5::before, #cell_6::before, #cell_7::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px; /* Товщина правої лінії */
+    height: 100%;
+    background: linear-gradient(to top,  #6ca5f5, #b0bbf8, #f1eed4); /* Градієнт для правої рамки */
+}
